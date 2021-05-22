@@ -1,8 +1,4 @@
-// const userName = document.getElementById("namePlease");
-// const userDeal = document.getElementById("yourDeal");
-// const userColour = document.getElementById("yourColour");
-// const userDate = document.getElementById("date");
-// const userFruit = document.getElementById("fruitPicker");
+
 
 // const userInputs = document.getElementsByClassName("userInput");
 
@@ -23,14 +19,7 @@ const yupButton = document.getElementById("yupButton").addEventListener("click",
     // function saveToLocalStorage() {
     //     localStorage.setItem(saveFile.userName, userArray);
     // }
-    // saveToLocalStorage();
-
-    const userName = document.getElementById("namePlease").value;
-    const userDeal = document.getElementById("yourDeal").value;
-    const userColour = document.getElementById("yourColour").value;
-    const userDate = document.querySelector("#date").value;
-    const userFruit = document.querySelector("#fruitPicker").value;
-    
+    // saveToLocalStorage();    
     // localStorage.setItem("namePlease", userName);
 
     
@@ -39,6 +28,21 @@ const yupButton = document.getElementById("yupButton").addEventListener("click",
     newColDiv.appendChild(newColInfo);
     const randoDiv = document.getElementById("randoCol");
     randoDiv.append(newColDiv);
+
+    newIGN();
 });
+
+const userName = document.getElementById("namePlease").value;
+const userDeal = document.getElementById("yourDeal").value;
+const userColour = document.getElementById("yourColour").value;
+const userDate = document.querySelector("#date").value;
+const userFruit = document.querySelector("#fruitPicker").value;
+
+function newIGN(userName, userDeal, userColour, userDate, userFruit) {
+    const userArray = [];
+    
+    userArray.push(userName, userDeal, userColour, userDate, userFruit);
+    console.log(userArray);
+}
 
 
