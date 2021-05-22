@@ -1,0 +1,69 @@
+/* This is the font I'm using for this webpage. */
+@font-face {
+    font-family: MinecraftRegular;
+    src: url(Others/minecraft-font/MinecraftRegular-Bmg3.otf);
+  }
+
+
+html, body {
+    font-family: MinecraftRegular;
+    color: rgb(205, 255, 255);
+    background-color: aqua;
+}
+
+/* This is the parent flex div. */
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
+}
+
+#header {
+    background-color: transparent;
+    justify-content: center;
+    color: rgb(4, 82, 75);
+}
+
+.col {
+    /* Flexbox setting for the form. */
+    flex-grow: 4;
+    flex-shrink: 1;
+    flex-basis: auto;
+    background-color: rgba(44, 54, 68, 0.363);
+    background-size: 100%;
+    padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+
+label {
+    padding-top: 20px;
+}
+
+.userInput {
+    width: 95%;
+    height: auto;
+    font-family: MinecraftRegular;
+    color: rgb(4, 82, 75);
+    padding: 5px
+}
+
+button {
+    font-family: MinecraftRegular;
+    background-color: darkcyan;
+    border-color: transparent;
+    color: rgb(4, 82, 75);
+
+}
+
+button:hover {
+    color:rgb(205, 255, 255);
+    border-color: rgb(205, 255, 255);
+    border-width: 1px;
+    width: inherit;
+}

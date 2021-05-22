@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="lessGo">
+        <div class="row">
+            <div class="col" id="header"><h1>Hey.</h1></div>
+            <div class="col" id="formCol">                  
+                <form>
+                    <label for="namePlease">May I have your name please?</label><br>
+                    <input class="userInput" type="text" placeholder="Name please." id="namePlease"><br>
+
+                    <label for="yourDeal">So, like... what's your deal?</label><br>
+                    <textarea class="userInput" placeholder="What's your deal?" id="yourDeal"></textarea><br>
+
+                    <label for="yourColour">What is your favourite colour?</label><br>
+                    <input class="userInput" type="text" placeholder="Favourite colour?" id="yourColour"><br>
+
+                    <label for="date">What's the date today?</label><br>
+                    <input class="userInput" type="date" id="date"><br>
+
+                    <label for="fruitPicker">Which of these fruit is the most appealing to you?</label><br>
+                    <select class="userInput" name="fruitPicker">
+                        <option value="Pick your fruit." selected disabled>Pick your fruit.</option>
+                        <option value="Pomegranate">Pomegranate</option>
+                        <option value="Apple">Apple</option>
+                        <option value="SweetSop">Sweet Sop</option>
+                        <option value="YarPears">Yar Pears</option>
+                    </select><br>
+                    
+                    <button type="button" onclick="yupButton(saveFile)">Yup, that's me.</button>
+                </form>
+            </div>
+            <div class="col" id="randoCol"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
