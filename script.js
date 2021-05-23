@@ -22,6 +22,11 @@ const yupButton = document.getElementById("yupButton").addEventListener("click",
     // saveToLocalStorage();    
     // localStorage.setItem("namePlease", userName);
 
+    const userName = document.getElementById("namePlease").value;
+    const userDeal = document.getElementById("yourDeal").value;
+    const userColour = document.getElementById("yourColour").value;
+    const userDate = document.querySelector("#date").value;
+    const userFruit = document.querySelector("#fruitPicker").value;
     
     const newColDiv = document.createElement("div", {is: "col"});
     const newColInfo = document.createTextNode("IGN: " + userName + ".<br>" + "Their deal is:<br>" + userDeal + "<br>" + " Their favourite colour is: " + userColour + ". The fruit that was most appealing to them was: " +  "<br>" + userFruit + " Created on: " + userDate);
@@ -32,11 +37,7 @@ const yupButton = document.getElementById("yupButton").addEventListener("click",
     newIGN();
 });
 
-const userName = document.getElementById("namePlease").value;
-const userDeal = document.getElementById("yourDeal").value;
-const userColour = document.getElementById("yourColour").value;
-const userDate = document.querySelector("#date").value;
-const userFruit = document.querySelector("#fruitPicker").value;
+
 
 function newIGN(userName, userDeal, userColour, userDate, userFruit) {
     const userArray = [];
