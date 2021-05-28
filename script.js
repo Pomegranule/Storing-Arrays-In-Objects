@@ -29,8 +29,8 @@ const yupButton = document.getElementById("yupButton").addEventListener("click",
     const userFruit = document.querySelector("#fruitPicker").value;
     
     const newColDiv = document.createElement("div", {is: "col"});
-    const newColInfo = document.createTextNode("IGN: " + userName + ".<br>" + "Their deal is:<br>" + userDeal + "<br>" + " Their favourite colour is: " + userColour + ". The fruit that was most appealing to them was: " +  "<br>" + userFruit + " Created on: " + userDate);
-    newColDiv.appendChild(newColInfo);
+    newColDiv.setAttribute("id", "ignDiv");
+    newColDiv.innerHTML = ("IGN: " + userName + ".<br>" + "Their deal is:<br>" + userDeal + "<br>" + " Their favourite colour is: " + userColour + ". <br>The fruit that was most appealing to them was: " + userFruit + ". <br>Created on: " + userDate);
     const randoDiv = document.getElementById("randoCol");
     randoDiv.append(newColDiv);
 
