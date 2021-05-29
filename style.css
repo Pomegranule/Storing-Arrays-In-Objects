@@ -107,5 +107,26 @@ button:hover {
     html, body, .container {
       width: 370px;
     }
+    #formCol {
+        /* Flexbox setting for the form. */
+        flex-grow: 4;
+        flex-shrink: 1;
+        flex-basis: auto;
+        background-color: rgba(44, 54, 68, 0.363);
+        background-size: 100%;
+        padding: 10px;
+        max-width: 100%;
+        float: left;
+    }
     
+    #randoCol{
+        flex-grow: 4;
+        flex-shrink: 1;
+        flex-basis: auto;
+        background-color: rgba(44, 54, 68, 0.363);
+        background-size: 100%;
+        padding: 10px;
+        max-width: 100%;
+        float: left;
+    }
   }
