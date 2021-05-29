@@ -30,7 +30,7 @@ const yupButton = document.getElementById("yupButton").addEventListener("click",
     
     const newColDiv = document.createElement("div", {is: "col"});
     newColDiv.setAttribute("id", "ignDiv");
-    newColDiv.innerHTML = ("<fieldset>IGN: " + userName + ".<br>" + "Their deal is:<br>" + userDeal + "<br>" + " Their favourite colour is: " + userColour + ". <br>The fruit that was most appealing to them was: " + userFruit + ". <br>Created on: " + userDate + "</fieldset>");
+    newColDiv.innerHTML = ("<fieldset>IGN: <h5>" + userName + ".</h5>" + "Their deal is:<h5>" + userDeal + "</h5>" + " Their favourite colour is: <h5>" + userColour + ".</h5>The fruit that was most appealing to them was: <h5>" + userFruit + ".</h5> Created on: <h5>" + userDate + "</h5></fieldset>");
     const randoDiv = document.getElementById("randoCol");
     randoDiv.append(newColDiv);
 

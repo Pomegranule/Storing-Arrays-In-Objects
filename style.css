@@ -60,6 +60,16 @@ html, body {
     float: left;
 }
 
+fieldset{
+    border-color: rgb(205, 255, 255);
+}
+
+h5{
+    padding: 0;
+    margin: 0;
+    color: aqua;
+}
+
 form {
     display: flex;
     flex-flow: column wrap;
@@ -92,3 +102,10 @@ button:hover {
     border-width: 1px;
     width: inherit;
 }
+
+@media only screen and (max-width: 600px) {
+    html, body, .container {
+      width: 370px;
+    }
+    
+  }
