@@ -34,16 +34,25 @@ const yupButton = document.getElementById("yupButton").addEventListener("click",
     const randoDiv = document.getElementById("randoCol");
     randoDiv.append(newColDiv);
 
-    newIGN();
+    storeIGN();
 });
 
 
 
-function newIGN(userName, userDeal, userColour, userDate, userFruit) {
-    const userArray = [];
-    
-    userArray.push(userName, userDeal, userColour, userDate, userFruit);
-    console.log(userArray);
+function storeIGN(userName, userDeal, userColour, userDate, userFruit) {
+    localStorage.setItem("ourPeeps", JSON.stringify({
+        "userName": userName,
+        "userDeal": userDeal,
+        "userColour": userColour,
+        "userDate": userDate,
+        "userFruit": userFruit
+    }));
+    console.log(localStorage);
 }
 
+const loadPeeps = document.getElementsByTagName("body").addEventListener("load", function(){
+    let peeps = JSON.parse(localStorage.getItem("ourPeeps"));
+
+    console.log(peeps);
+})
 
