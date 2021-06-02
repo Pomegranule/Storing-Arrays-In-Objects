@@ -29,39 +29,52 @@ function storePeep() {
     let peepDate = document.querySelector("#date").value;
     let peepFruit = document.querySelector("#fruitPicker").value;
     
-    peepID();
+    let uniquePeepID = "ID_" + Math.random().toString(36).slice(2);
 
-    localStorage.setItem("ourPeeps", JSON.stringify({
+    localStorage.setItem(uniquePeepID, JSON.stringify({
         "userName": peepName,
         "userDeal": peepDeal,
         "userColour": peepColour,
         "userDate": peepDate,
         "userFruit": peepFruit,
+        "ignID": uniquePeepID,
     }));
     console.log(localStorage);
 }
 
-function peepID(){
+// function peepID(){
+//         let uniquePeepID = 0
+        
+//         if(ourPeeps.length == 0){
+//             uniquePeepID = 1
+//         } else {
+//             let lastPeepID = ourPeeps[ourPeeps.length-1].uniquePeepID
+//             uniquePeepID = lastPeepID + 1
+//         }
 
-}
+//         return uniquePeepID;
+//         // console.log(uniquePeepID);
+//     }
 
 const loadPeeps = document.getElementById("loadOtherPeeps").addEventListener("click", function(){
-    let peeps = JSON.parse(localStorage.getItem("ourPeeps"));
-    
+    let peeps = JSON.parse(localStorage.getItem(uniquePeepID));
+    //uniquePeepID is not defined. You cannot redefine it here because then you will get a different unique ID. Instead, you should reference a click event listener, that tracks which peep you have selected, and then gives you the uniquePeepID of the selected peep. Wait, that doesn't work for this because this whole function is to make the peeps load. How can you click on a peep that hasn't loaded on the page, yet?
+
     console.log(peeps);
 
     peepCards();
 })
 
 function peepCards(){  
-    peeps = JSON.parse(localStorage.getItem("ourPeeps"));
+    peeps = localStorage.getItem(uniquePeepID);
     
     for (let peepCards=0; peepCards <= peeps.length; peepCards++){
-        
-        peepCards= newColDiv.innerHTML = ("<fieldset>IGN: <h5>" + peepName + ".</h5>" + "Their deal is:<h5>" + peepDeal + "</h5>" + " Their favourite colour is: <h5>" + peepColour + ".</h5>The fruit that was most appealing to them was: <h5>" + peepFruit + ".</h5> Created on: <h5>" + peepDate + "</h5></fieldset>");
-        const randoDiv = document.getElementById("randoCol");
-        randoDiv.append(newColDiv);
+        console.log(peeps);
+        // peepCards= newColDiv.innerHTML = ("<fieldset>IGN: <h5>" + peepName + ".</h5>" + "Their deal is:<h5>" + peepDeal + "</h5>" + " Their favourite colour is: <h5>" + peepColour + ".</h5>The fruit that was most appealing to them was: <h5>" + peepFruit + ".</h5> Created on: <h5>" + peepDate + "</h5></fieldset>");
+        // const randoDiv = document.getElementById("randoCol");
+        // randoDiv.append(newColDiv);
     }
 
-    console.log(peeps);
+    
 }
+
