@@ -28,6 +28,8 @@ function storePeep() {
     let peepColour = document.getElementById("yourColour").value;
     let peepDate = document.querySelector("#date").value;
     let peepFruit = document.querySelector("#fruitPicker").value;
+    
+    peepID();
 
     localStorage.setItem("ourPeeps", JSON.stringify({
         "userName": peepName,
@@ -39,9 +41,27 @@ function storePeep() {
     console.log(localStorage);
 }
 
+function peepID(){
+
+}
+
 const loadPeeps = document.getElementById("loadOtherPeeps").addEventListener("click", function(){
     let peeps = JSON.parse(localStorage.getItem("ourPeeps"));
-
+    
     console.log(peeps);
+
+    peepCards();
 })
 
+function peepCards(){  
+    peeps = JSON.parse(localStorage.getItem("ourPeeps"));
+    
+    for (let peepCards=0; peepCards <= peeps.length; peepCards++){
+        
+        peepCards= newColDiv.innerHTML = ("<fieldset>IGN: <h5>" + peepName + ".</h5>" + "Their deal is:<h5>" + peepDeal + "</h5>" + " Their favourite colour is: <h5>" + peepColour + ".</h5>The fruit that was most appealing to them was: <h5>" + peepFruit + ".</h5> Created on: <h5>" + peepDate + "</h5></fieldset>");
+        const randoDiv = document.getElementById("randoCol");
+        randoDiv.append(newColDiv);
+    }
+
+    console.log(peeps);
+}
