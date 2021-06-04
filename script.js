@@ -34,13 +34,23 @@ function storePeep() {
         "userFruit": peepFruit,
         "ignID": uniquePeepID,
     }));
-    console.log(localStorage);
+    // console.log(localStorage);
 }
 
 function peepCards(){  
     // peeps = localStorage.getItem(uniquePeepID);
-    localStorage.getItem("");
-    console.log(localStorage);
+    for (let loop = 0; loop < localStorage.length; loop++){
+        
+        let savedPeep = localStorage.getItem(localStorage.key(JSON.parse(loop)));
+
+        // const newColDiv = document.createElement("div", {is: "col"});
+        // newColDiv.setAttribute("id", "ignDiv");
+        // peepCard = newColDiv.innerHTML = ("<fieldset>IGN: <h5>" + peepName + ".</h5>" + "Their deal is:<h5>" + peepDeal + "</h5>" + " Their favourite colour is: <h5>" + peepColour + ".</h5>The fruit that was most appealing to them was: <h5>" + peepFruit + ".</h5> Created on: <h5>" + peepDate + "</h5></fieldset>");
+        console.log(savedPeep);
+    }
+    
+    // localStorage.getItem(localStorage.key());
+    // console.log(savedPeep);
     // peepName = localStorage.getItem("userName");
     // peepDeal = localStorage.getItem("userDeal");
     // peepColour = localStorage.getItem("userColour");
@@ -48,9 +58,7 @@ function peepCards(){
     // peepFruit = localStorage.getItem("userFruit");
     // uniquePeepID = localStorage.getItem("ignID");
 
-    // const newColDiv = document.createElement("div", {is: "col"});
-    // newColDiv.setAttribute("id", "ignDiv");
-    // peepCard = newColDiv.innerHTML = ("<fieldset>IGN: <h5>" + peepName + ".</h5>" + "Their deal is:<h5>" + peepDeal + "</h5>" + " Their favourite colour is: <h5>" + peepColour + ".</h5>The fruit that was most appealing to them was: <h5>" + peepFruit + ".</h5> Created on: <h5>" + peepDate + "</h5></fieldset>");
+    
 
     // for (let peeps=0; peepCard <= peeps.length; peepCard++){
     //     const randoDiv = document.getElementById("randoCol");
@@ -68,9 +76,9 @@ const loadPeeps = document.getElementById("loadOtherPeeps").addEventListener("cl
 
     peepCards();
 
-    const newColDiv = document.createElement("div", {is: "col"});
-    newColDiv.setAttribute("id", "ignDiv");
-    peepCard = newColDiv.innerHTML = ("<fieldset>IGN: <h5>" + peepName + ".</h5>" + "Their deal is:<h5>" + peepDeal + "</h5>" + " Their favourite colour is: <h5>" + peepColour + ".</h5>The fruit that was most appealing to them was: <h5>" + peepFruit + ".</h5> Created on: <h5>" + peepDate + "</h5></fieldset>");
+    // const newColDiv = document.createElement("div", {is: "col"});
+    // newColDiv.setAttribute("id", "ignDiv");
+    // peepCard = newColDiv.innerHTML = ("<fieldset>IGN: <h5>" + peepName + ".</h5>" + "Their deal is:<h5>" + peepDeal + "</h5>" + " Their favourite colour is: <h5>" + peepColour + ".</h5>The fruit that was most appealing to them was: <h5>" + peepFruit + ".</h5> Created on: <h5>" + peepDate + "</h5></fieldset>");
 })
 
 // function peepID(){
