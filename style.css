@@ -50,7 +50,10 @@ html, body {
 }
 
 #ignDiv{
-    flex-grow: 4;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    flex-grow: 3;
     flex-shrink: 1;
     flex-basis: auto;
     background-color: rgba(44, 54, 68, 0.363);
@@ -58,6 +61,25 @@ html, body {
     padding: 10px;
     max-width: 420px;
     float: left;
+}
+
+#buttons{
+    display: none;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: fit-content;
+    padding: 3px;
+    margin: 5px;
+    width: 90px;
+    background-color: rgba(44, 54, 68, 0.363);
+    float: right;
+}
+
+.manageTasks{
+    margin:3%;
+    display: unset;
 }
 
 fieldset{
