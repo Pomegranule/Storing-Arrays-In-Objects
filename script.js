@@ -13,7 +13,7 @@ function createPeepCard(){
     let peepFruit = document.querySelector("#fruitPicker").value;
     
     const newColDiv = document.createElement("div", {is: "col"});
-    newColDiv.setAttribute("id", "ignDiv");
+    newColDiv.setAttribute("class", "ignDiv");
     
     newColDiv.innerHTML = (`<fieldset>IGN: <h5>${peepName}.</h5> Their deal is: <h5>${peepDeal}</h5> Their favourite colour is: <h5>${peepColour}.</h5> The fruit that was most appealing to them was: <h5>${peepFruit}.</h5> Created on: <h5>${peepDate}</h5> ${uniquePeepID}</fieldset>`);
     
@@ -50,14 +50,15 @@ function loadPeepCards(){
         let {userName, userDeal, userColour, userDate, userFruit, ignID} = peepObj;
 
         const newColDiv = document.createElement("div", {is: "col"});
-        newColDiv.setAttribute("id", "ignDiv");
+        newColDiv.setAttribute("class", "ignDiv");
+        newColDiv.setAttribute("id", `${ignID}`);
         
         peepCard = newColDiv.innerHTML = (`<fieldset>
         
-        <div class="col" id="buttons">
-        <button class="manageTasks" type="button" id="editButton">E<img src=""></button>
-        <button class="manageTasks"type="button" id="deleteButton">D<img src=""></button>
-        <button class="manageTasks"type="button" id="saveButton">S<img src=""></button>
+        <div class="col manageButtons" id="buttons${ignID}">
+        <button class="manageTasks" type="button" id="editButton${ignID}">E<img src=""></button>
+        <button class="manageTasks"type="button" id="deleteButton${ignID}">D<img src=""></button>
+        <button class="manageTasks"type="button" id="saveButton${ignID}">S<img src=""></button>
         </div><br>
         
         IGN: <h5>${userName}.</h5> Their deal is: <h5>${userDeal}</h5> Their favourite colour is: <h5>${userColour}.</h5> The fruit that was most appealing to them was: <h5>${userFruit}.</h5> Created on: <h5>${userDate}</h5> ${ignID}
@@ -68,15 +69,19 @@ function loadPeepCards(){
         randoDiv.append(newColDiv);
     }    
 }
-let ignDiv = document.getElementById("ignDiv");
-ignDiv.addEventListener("click", selectAPeep);
+let ignDiv = document.getElementsByClassName("ignDiv")
+
+
+for(let loop=0; loop < ignDiv.length; loop++){
+   ignDiv[loop].addEventListener("click", selectAPeep); 
+}
 
 function peepCardManagement(){
     
 }
 
 function selectAPeep(){
-    let ignDiv = document.getElementById("ignDiv");
+    let ignDiv = document.getElementsByClassName("ignDiv");
     let peepButtons = document.getElementById("buttons");
 
     if (peepButtons.style.display === "none"){
