@@ -42,6 +42,11 @@ function storePeep(){
     }));
 }
 
+//Yay!! A finished and fully functional function! This is the function that will load all of the peeps that were previously created using the form and then saved to localStorage.
+
+//loadPeepCards() loops through every entry that was saved to the user's local storage and recreates a card for every single one of those entries. It then appends that entry to randoCol, an empty col div near the bottom of your HTML.
+
+//Maybe add something that limits the amount of cards that can be shown on screen at once, and allows a scroll bar to appear.
 function loadPeepCards(){  
     for (let loop = 0; loop < localStorage.length; loop++){
 
@@ -69,21 +74,26 @@ function loadPeepCards(){
         randoDiv.append(newColDiv);
     }    
 }
-let ignDiv = document.getElementById("ignDiv")
 
+//This is the start of an event listener that will detect which peep entry you have clicked on.
+let ignDiv = document.getElementById("ignDiv")
 ignDiv.addEventListener("click", selectAPeep);
 
-
-// for(let loop=0; loop < ignDiv.length; loop++){
-//    ignDiv[loop].addEventListener("click", selectAPeep); 
-// }
-
+//Whoops, you didn't finish this one...
 function peepCardManagement(){
-    
+    //To be continued...
+    //Also, please add the edit, save and delete functions, here.
 }
 
+//selectAPeep() is the function that is called when a peepCard is clicked on. This function causes the edit, save and delete buttons to appear on the selected card as well as changes the background color of that card so that the user knows which one has been selected.
 
+//1st issue: you can't have multiple elements with the same ID! Please declare these elements using a classname instead.
 
+//2nd issue: okay, that broke everything. Still figuring out why. Maybe use a while loop or something? Okay, declaring things by their classname will return multiple elements. You would need to loop through each one, but that didn't work for some reason. 
+
+//3rd issue: have only just realised that edit, save and delete buttons will not show up on any other card except the top one. Why? Please figure this out. This might also fix some of the other issues.
+
+//4th issue: please go and change the IDs and classnames in the peepCards that are recreated upon load. The first one will be fine, but any subsequent cards will not be selected because they will have the same ID. Give them a classname and make sure that the classname is also changed in the CSS so that the style is kept.
 function selectAPeep(){
     let ignDiv = document.getElementById("ignDiv");
     let peepButtons = document.getElementById("buttons");
@@ -93,19 +103,6 @@ function selectAPeep(){
         ignDiv.style.backgroundColor = "#54a8c2"
     }else{
         peepButtons.style.display = "none";
-        ignDiv.style.backgroundColor = "rgb(84, 168, 194)"
+        ignDiv.style.backgroundColor = "#03838f"
     }
 }
-// function peepID(){
-//         let uniquePeepID = 0
-        
-//         if(ourPeeps.length == 0){
-//             uniquePeepID = 1
-//         } else {
-//             let lastPeepID = ourPeeps[ourPeeps.length-1].uniquePeepID
-//             uniquePeepID = lastPeepID + 1
-//         }
-
-//         return uniquePeepID;
-//         // console.log(uniquePeepID);
-//     }

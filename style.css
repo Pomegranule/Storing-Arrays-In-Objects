@@ -56,7 +56,7 @@ html, body {
     flex-grow: 3;
     flex-shrink: 1;
     flex-basis: auto;
-    background-color: rgba(44, 54, 68, 0.363);
+    background-color: #03838f;
     background-size: 100%;
     padding: 10px;
     max-width: 420px;
@@ -125,6 +125,8 @@ button:hover {
     width: inherit;
 }
 
+
+/* This doesn't work one phones with thinner screens. Please adjust accordingly. */
 @media only screen and (max-width: 600px) {
     html, body, .container {
       width: 370px;
