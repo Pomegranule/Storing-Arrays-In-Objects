@@ -51,14 +51,14 @@ function loadPeepCards(){
 
         const newColDiv = document.createElement("div", {is: "col"});
         newColDiv.setAttribute("class", "ignDiv");
-        newColDiv.setAttribute("id", `${ignID}`);
+        newColDiv.setAttribute("id", "ignDiv");
         
         peepCard = newColDiv.innerHTML = (`<fieldset>
         
-        <div class="col manageButtons" id="buttons${ignID}">
-        <button class="manageTasks" type="button" id="editButton${ignID}">E<img src=""></button>
-        <button class="manageTasks"type="button" id="deleteButton${ignID}">D<img src=""></button>
-        <button class="manageTasks"type="button" id="saveButton${ignID}">S<img src=""></button>
+        <div class="col manageButtons" id="buttons">
+        <button class="manageTasks" type="button" id="editButton">E<img src=""></button>
+        <button class="manageTasks"type="button" id="deleteButton">D<img src=""></button>
+        <button class="manageTasks"type="button" id="saveButton">S<img src=""></button>
         </div><br>
         
         IGN: <h5>${userName}.</h5> Their deal is: <h5>${userDeal}</h5> Their favourite colour is: <h5>${userColour}.</h5> The fruit that was most appealing to them was: <h5>${userFruit}.</h5> Created on: <h5>${userDate}</h5> ${ignID}
@@ -69,26 +69,31 @@ function loadPeepCards(){
         randoDiv.append(newColDiv);
     }    
 }
-let ignDiv = document.getElementsByClassName("ignDiv")
+let ignDiv = document.getElementById("ignDiv")
+
+ignDiv.addEventListener("click", selectAPeep);
 
 
-for(let loop=0; loop < ignDiv.length; loop++){
-   ignDiv[loop].addEventListener("click", selectAPeep); 
-}
+// for(let loop=0; loop < ignDiv.length; loop++){
+//    ignDiv[loop].addEventListener("click", selectAPeep); 
+// }
 
 function peepCardManagement(){
     
 }
 
+
+
 function selectAPeep(){
-    let ignDiv = document.getElementsByClassName("ignDiv");
+    let ignDiv = document.getElementById("ignDiv");
     let peepButtons = document.getElementById("buttons");
 
     if (peepButtons.style.display === "none"){
         peepButtons.style.display = "flex";
-        ignDiv.style.color = ""
+        ignDiv.style.backgroundColor = "#54a8c2"
     }else{
         peepButtons.style.display = "none";
+        ignDiv.style.backgroundColor = "rgb(84, 168, 194)"
     }
 }
 // function peepID(){
