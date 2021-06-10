@@ -93,7 +93,7 @@ function selectAPeep(){
         ignDiv.style.backgroundColor = "#54a8c2"
     }else{
         peepButtons.style.display = "none";
-        ignDiv.style.backgroundColor = "rgb(84, 168, 194)"
+        ignDiv.style.backgroundColor = "#03838f"
     }
 }
 // function peepID(){
